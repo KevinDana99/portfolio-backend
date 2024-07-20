@@ -3,10 +3,10 @@ import express from "express";
 import cors from "cors";
 import api from "./routes";
 import { boomErrorHandler, errorHandler } from "./middlewares/errorHandler";
+import { PORT } from "./constants";
 
 const server = express();
 dotenv.config();
-const PORT = process.env.PORT || 3001;
 
 server.set("json spaces", 2);
 

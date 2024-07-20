@@ -7,6 +7,14 @@ const swaggerSpec = swaggerJsdoc(swaggerConfig);
 
 const router = express.Router();
 
-router.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+router.use(
+  "/",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec, {
+    customCssUrl:
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css",
+    customSiteTitle: "API DOCS",
+  })
+);
 
 export default router;

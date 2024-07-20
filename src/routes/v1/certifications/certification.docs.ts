@@ -1,67 +1,92 @@
 /**
- * @openapi
+ * @swagger
  * /certifications/all:
  *   get:
- *     summary: get all certifications
- *  parameters:
- *       - name: userId
- *         in: path
- *         description: The ID of the user to retrieve
- *         required: true
- *         type: string
+ *     summary: Obtiene todas las certificaciones
+ *     description: Este endpoint permite obtener todas las certificaciones disponibles.
  *     responses:
- *       200:
- *         description: the request a complied
- *       500:
- *         description: the request failed
+ *       '200':
+ *         description: Lista de certificaciones recuperada exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               $ref: "#/components/schemas/certifications"
+ *       '400':
+ *         description: Solicitud incorrecta
  */
 
 /**
- * @openapi
+ * @swagger
  * /certifications/certification/{id}:
  *   get:
- *     summary: get one certification using it id
+ *     summary: Obtiene una certificacion
+ *     description: Permite obtener una certificacion en concreto
+ *     parameters:
+ *       - name: id
+ *         in: param
+ *         description: id de la certificacion a obtener
+ *         required: true
  *     responses:
- *       200: the
- *
+ *       '200':
+ *         description: Lista de certificaciones recuperada exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               $ref: "#/components/schemas/certifications"
+ *       '400':
+ *         description: Solicitud incorrecta
  */
 
 /**
- * @openapi
- * /example:
+ * @swagger
+ * /certifications/certification/create:
  *   post:
- *     summary: Retrieves an example item
+ *     summary: Crea una certificacion
+ *     description: Permite crear una certificacion.
+ *     parameters:
+ *       - name: body
+ *         in: body
+ *         description: Cuerpo del certificado a crear
+ *         required: true
+ *         schema:
+ *          type: object
+ *          $ref: "#/components/schemas/certification"
  *     responses:
- *       200:
- *         description: An example item
+ *       '200':
+ *         description: Lista de certificaciones recuperada exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               $ref: "#/components/schemas/certifications"
+ *       '400':
+ *         description: Solicitud incorrecta
  */
 
 /**
- * @openapi
- * /example:
- *   put:
- *     summary: Retrieves an example item
+ * @swagger
+ * /certifications/certification/update:
+ *   patch:
+ *     summary: Modifica una certificacion
+ *     description: Permite modificar una certificacion.
+ *     parameters:
+ *       - name: body
+ *         in: body
+ *         description: Cuerpo del certificado a modificar
+ *         required: true
+ *         schema:
+ *          type: object
+ *          $ref: "#/components/schemas/certification"
  *     responses:
- *       200:
- *         description: An example item
- */
-
-/**
- * @openapi
- * /example:
- *   put:
- *     summary: Retrieves an example item
- *     responses:
- *       200:
- *         description: An example item
- */
-
-/**
- * @openapi
- * /example:
- *   delete:
- *     summary: Retrieves an example item
- *     responses:
- *       200:
- *         description: An example item
+ *       '200':
+ *         description: Lista de certificaciones recuperada exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               $ref: "#/components/schemas/certifications"
+ *       '400':
+ *         description: Solicitud incorrecta
  */
