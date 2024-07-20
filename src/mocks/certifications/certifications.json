@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "Nombre de certificacion",
+    "entity": "Platzi",
+    "dateAt": "2023",
+    "img": "https",
+    "category": "programer"
+  },
+  {
+    "id": 1,
+    "name": "Nombre de certificacion",
+    "entity": "Platzi",
+    "dateAt": "2023",
+    "img": "https",
+    "category": "programer"
+  },
+  {
+    "id": 2,
+    "name": "Nombre de certificacion",
+    "entity": "Platzi",
+    "dateAt": "2023",
+    "img": "https",
+    "category": "programer"
+  }
+]

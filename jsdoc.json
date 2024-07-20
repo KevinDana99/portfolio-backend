@@ -1,0 +1,12 @@
+{
+  "source": {
+    "include": ["api/routes"],
+    "exclude": ["node_modules"],
+    "includePattern": ".+\\.docs\\.js$",
+    "excludePattern": "(^|\\/|\\.)_"
+  },
+  "opts": {
+    "destination": "./docs",
+    "recurse": true
+  }
+}
