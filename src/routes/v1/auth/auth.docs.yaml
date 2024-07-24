@@ -1,0 +1,40 @@
+paths:
+  /auth/login:
+    post:
+      summary: Inicia sesión
+      description: Permite a los usuarios iniciar sesión.
+      tags: [Auth]
+      requestBody:
+        description: Credenciales del usuario para iniciar sesión
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/users"
+      responses:
+        "200":
+          description: Inicio de sesión exitoso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/users"
+        "400":
+          description: Solicitud incorrecta
+
+  /auth/logout:
+    post:
+      summary: Cierra sesión
+      description: Permite a los usuarios cerrar sesión.
+      tags: [Auth]
+      requestBody:
+        description: Información necesaria para cerrar sesión
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/users"
+      responses:
+        "200":
+          description: Cierre de sesión exitoso
+        "400":
+          description: Solicitud incorrecta

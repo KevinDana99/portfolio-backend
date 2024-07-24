@@ -1,0 +1,16 @@
+paths:
+  /reviews:
+    get:
+      summary: Obtiene todas las reviews
+      description: Permite obtener todas las reviews disponibles.
+      tags: [Reviews]
+      responses:
+        "200":
+          description: Lista de certificaciones recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/certifications"
+        "400":
+          description: Solicitud incorrecta

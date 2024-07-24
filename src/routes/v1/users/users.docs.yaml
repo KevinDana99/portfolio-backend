@@ -1,0 +1,159 @@
+paths:
+  /users:
+    get:
+      summary: Obtiene todos los usuarios
+      description: Este endpoint permite obtener todos los usuarios disponibles.
+      tags: [Usuarios]
+      responses:
+        "200":
+          description: Lista de usuarios recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "400":
+          description: Solicitud incorrecta
+
+    post:
+      summary: Crea un usuario
+      description: Permite crear un usuario.
+      tags: [Usuarios]
+      requestBody:
+        description: Cuerpo del usuario a crear
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: Usuario creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Solicitud incorrecta
+
+  /users/{id}:
+    get:
+      summary: Obtiene un usuario
+      description: Permite obtener un usuario específico.
+      tags: [Usuarios]
+      parameters:
+        - name: id
+          in: path
+          description: ID del usuario a obtener
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Usuario recuperado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: Usuario no encontrado
+        "400":
+          description: Solicitud incorrecta
+
+    patch:
+      summary: Modifica un usuario
+      description: Permite modificar un usuario existente.
+      tags: [Usuarios]
+      parameters:
+        - name: id
+          in: path
+          description: ID del usuario a modificar
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Cuerpo del usuario a modificar
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: Usuario modificado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: Usuario no encontrado
+        "400":
+          description: Solicitud incorrecta
+
+    delete:
+      summary: Elimina un usuario
+      description: Permite eliminar un usuario existente.
+      tags: [Usuarios]
+      parameters:
+        - name: id
+          in: path
+          description: ID del usuario a eliminar
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Usuario eliminado exitosamente
+        "404":
+          description: Usuario no encontrado
+        "400":
+          description: Solicitud incorrecta
+
+  /users/{id}/profile:
+    get:
+      summary: Obtiene el perfil de un usuario
+      description: Este endpoint permite obtener el perfil de un usuario específico.
+      tags: [Usuarios]
+      parameters:
+        - name: id
+          in: path
+          description: ID del usuario cuyo perfil se desea obtener
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Perfil del usuario recuperado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserProfile"
+        "404":
+          description: Usuario no encontrado
+        "400":
+          description: Solicitud incorrecta
+
+  /users/{id}/profile/download:
+    get:
+      summary: Descarga el perfil de un usuario
+      description: Permite descargar el perfil de un usuario específico.
+      tags: [Usuarios]
+      parameters:
+        - name: id
+          in: path
+          description: ID del usuario cuyo perfil se desea descargar
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Perfil del usuario descargado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserProfile"
+        "404":
+          description: Usuario no encontrado
+        "400":
+          description: Solicitud incorrecta

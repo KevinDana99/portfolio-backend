@@ -5,6 +5,7 @@ import {
   allCertificationsSchema,
   oneCertificationSchema,
 } from "./src/schemas/docs/certifications";
+import { allUsersSchema, oneUserSchema } from "./src/schemas/docs/users";
 dotenv.config();
 const swaggerConfig: SwaggerOptions = {
   swaggerDefinition: {
@@ -26,11 +27,13 @@ const swaggerConfig: SwaggerOptions = {
       schemas: {
         certifications: allCertificationsSchema,
         certification: oneCertificationSchema,
+        users: allUsersSchema,
+        user: oneUserSchema,
       },
     },
   },
 
-  apis: ["./src/routes/v1/**/*.docs.ts"],
+  apis: ["./src/routes/v1/**/*.docs.yaml"],
 };
 
 export default swaggerConfig;

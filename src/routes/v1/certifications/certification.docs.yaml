@@ -1,0 +1,111 @@
+paths:
+  /certifications:
+    get:
+      summary: Obtiene todas las certificaciones
+      description: Este endpoint permite obtener todas las certificaciones disponibles.
+      tags: [Certificaciones]
+      responses:
+        "200":
+          description: Lista de certificaciones recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Certification"
+        "400":
+          description: Solicitud incorrecta
+
+    post:
+      summary: Crea una certificación
+      description: Permite crear una certificación.
+      tags: [Certificaciones]
+      requestBody:
+        description: Cuerpo del certificado a crear
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Certification"
+      responses:
+        "201":
+          description: Certificación creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Certification"
+        "400":
+          description: Solicitud incorrecta
+
+  /certifications/{id}:
+    get:
+      summary: Obtiene una certificación
+      description: Permite obtener una certificación específica.
+      tags: [Certificaciones]
+      parameters:
+        - name: id
+          in: path
+          description: ID de la certificación a obtener
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Certificación recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Certification"
+        "404":
+          description: Certificación no encontrada
+        "400":
+          description: Solicitud incorrecta
+
+    patch:
+      summary: Modifica una certificación
+      description: Permite modificar una certificación existente.
+      tags: [Certificaciones]
+      parameters:
+        - name: id
+          in: path
+          description: ID de la certificación a modificar
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Cuerpo de la certificación a modificar
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Certification"
+      responses:
+        "200":
+          description: Certificación modificada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Certification"
+        "404":
+          description: Certificación no encontrada
+        "400":
+          description: Solicitud incorrecta
+
+    delete:
+      summary: Elimina una certificación
+      description: Permite eliminar una certificación existente.
+      tags: [Certificaciones]
+      parameters:
+        - name: id
+          in: path
+          description: ID de la certificación a eliminar
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Certificación eliminada exitosamente
+        "404":
+          description: Certificación no encontrada
+        "400":
+          description: Solicitud incorrecta

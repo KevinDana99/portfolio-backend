@@ -1,0 +1,103 @@
+paths:
+  /projects:
+    get:
+      summary: Obtiene todas los proyectos
+      description: Este endpoint permite obtener todas los proyectos disponibles.
+      tags: [Proyectos]
+      responses:
+        "200":
+          description: Lista de proyectos recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/projects"
+        "400":
+          description: Solicitud incorrecta
+
+    post:
+      summary: Crea un proyecto
+      description: Permite crear un proyecto.
+      tags: [Proyectos]
+      parameters:
+        - name: body
+          in: body
+          description: Cuerpo del certificado a crear
+          required: true
+          schema:
+            type: object
+            $ref: "#/components/schemas/project"
+      responses:
+        "200":
+          description: Lista de proyectos recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/projects"
+        "400":
+          description: Solicitud incorrecta
+
+  /projects/{id}:
+    get:
+      summary: Obtiene un proyecto
+      description: Permite obtener un proyecto en concreto
+      tags: [Proyectos]
+      parameters:
+        - name: id
+          in: param
+          description: id de la proyecto a obtener
+          required: true
+      responses:
+        "200":
+          description: Lista de proyectos recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/projects"
+        "400":
+          description: Solicitud incorrecta
+
+    patch:
+      summary: Modifica un proyecto
+      description: Permite modificar un proyecto.
+      tags: [Proyectos]
+      parameters:
+        - name: body
+          in: body
+          description: Cuerpo del certificado a modificar
+          required: true
+          schema:
+            type: object
+            $ref: "#/components/schemas/project"
+      responses:
+        "200":
+          description: Lista de proyectos recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/projects"
+        "400":
+          description: Solicitud incorrecta
+
+    delete:
+      summary: Elimina un proyecto
+      description: Permite modificar un proyecto.
+      tags: [Proyectos]
+      parameters:
+        - name: id
+          in: path
+          description: id del project a eliminar
+          required: true
+      responses:
+        "200":
+          description: Lista de proyectos recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/projects"
+        "400":
+          description: Solicitud incorrecta
