@@ -1,15 +1,15 @@
-import express, { Response, Request } from "express";
+import express, { Response, Request, NextFunction } from "express";
 import {
   findOneCertification,
   findAllCertification,
   updateCertification,
   deleteCertification,
   createCertification,
-} from "../../../services/certificates";
+} from "../../../services/certifications";
 const router = express.Router();
 
-router.get("/", (_: Request, res: Response) => {
-  const allCertifications = findAllCertification();
+router.get("/", async (_: Request, res: Response) => {
+  const allCertifications = await findAllCertification();
   res.status(201).json(allCertifications);
 });
 
@@ -19,23 +19,41 @@ router.get("/:id", (req: Request, res: Response) => {
   res.status(200).json(certification);
 });
 
-router.post("/", (req: Request, res: Response) => {
+router.post("/", async (req: Request, res: Response, next: NextFunction) => {
   const { body } = req;
-  const created = createCertification(body);
-  res.status(201).json(created);
+  try {
+    const created = await createCertification(body);
+    res.status(201).json(created);
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.patch("/:id", (req: Request, res: Response) => {
-  const { id } = req.params;
-  const { body } = req;
-  const updated = updateCertification(id, body);
-  res.status(200).json(updated);
-});
+router.patch(
+  "/:id",
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
+    const { body } = req;
+    try {
+      const updated = await updateCertification(id, body);
+      res.status(201).json(updated);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
-router.delete("/:id", (req: Request, res: Response) => {
-  const { id } = req.params;
-  const deleted = deleteCertification(id);
-  res.status(200).json(deleted);
-});
+router.delete(
+  "/:id",
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
+    try {
+      const deleted = await deleteCertification(id);
+      res.status(200).json(deleted);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 export default router;
