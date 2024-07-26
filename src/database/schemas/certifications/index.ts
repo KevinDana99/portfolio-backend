@@ -2,8 +2,7 @@ import { getModelForClass, prop } from "@typegoose/typegoose";
 import { CertificationSchemaType } from "./../../../schemas/certificationSchema/";
 
 class CertificationSchema implements CertificationSchemaType {
-  @prop({ required: true })
-  public id!: number;
+  public _id!: string;
   @prop({ required: true })
   public name!: string;
   @prop({ required: true })
