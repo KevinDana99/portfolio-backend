@@ -1,5 +1,5 @@
 import CertificationModel from "../../database/schemas/certifications";
-import { CertificationSchemaType } from "../../schemas/certificationSchema";
+import { CertificationSchemaType } from "../../database/schemas/certifications/types";
 import boom from "@hapi/boom";
 
 class CertificationService {

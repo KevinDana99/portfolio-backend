@@ -1,12 +1,21 @@
-import express, { Response, Request } from "express";
+import express, { Response, Request, NextFunction } from "express";
 const router = express.Router();
 
-router.get("/login", (_: Request, res: Response) => {
-  res.send({ ok: 200 });
+router.post("/login", async (_: Request, res: Response, next: NextFunction) => {
+  try {
+    res.status(200).json({ ok: 200 });
+  } catch (error) {
+    next(error);
+  }
 });
-
-router.get("/logout", (_: Request, res: Response) => {
-  res.send({ ok: 200 });
-});
-
+router.post(
+  "/logout",
+  async (_: Request, res: Response, next: NextFunction) => {
+    try {
+      res.status(200).json({ ok: 200 });
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 export default router;

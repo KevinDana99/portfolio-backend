@@ -1,5 +1,5 @@
 import { getModelForClass, prop } from "@typegoose/typegoose";
-import { CertificationSchemaType } from "./../../../schemas/certificationSchema/";
+import { CertificationSchemaType } from "./types";
 
 class CertificationSchema implements CertificationSchemaType {
   public _id!: string;
@@ -12,10 +12,10 @@ class CertificationSchema implements CertificationSchemaType {
   @prop({ required: true })
   public img!: string;
   @prop({ required: true })
-  public category!: string;
+  public categories!: string;
 }
 const CertificationModel = getModelForClass(CertificationSchema, {
-  schemaOptions: { collection: "certifications" },
+  schemaOptions: { collection: "certifications", timestamps: true },
 });
 
 export default CertificationModel;

@@ -1,0 +1,48 @@
+[
+  {
+    "_id": "0",
+    "name": "Los Colihues",
+    "entity": "Caña Colihue",
+    "dateAt": "2020",
+    "img": "https",
+    "categories": ["frontend", "backend", "database"],
+    "technologies": ["SQL", "HTML", "CSS", "Vanilla Javascript", "PHP"]
+  },
+  {
+    "_id": "1",
+    "name": "Smash Paddel",
+    "entity": "Smash Paddel",
+    "dateAt": "2021",
+    "img": "https",
+    "categories": ["frontend", "backend", "database"],
+    "technologies": ["SQL", "HTML", "CSS", "Vanilla Javascript", "PHP"]
+  },
+
+  {
+    "_id": "2",
+    "name": "Patagonia Chic",
+    "entity": "Patagonia Chic",
+    "dateAt": "2022",
+    "img": "https",
+    "categories": ["frontend"],
+    "technologies": [
+      "React",
+      "Next-13",
+      "GraphQL",
+      "Typescript",
+      "nodejs",
+      "atlassian",
+      "styled-components",
+      "redux"
+    ]
+  },
+  {
+    "_id": "3",
+    "name": "Nueva Energia",
+    "entity": "Nueva Energia",
+    "dateAt": "2024",
+    "img": "https",
+    "categories": ["frontend"],
+    "technologies": ["Vanilla Javascript"]
+  }
+]

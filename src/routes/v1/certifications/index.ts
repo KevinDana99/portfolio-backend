@@ -7,10 +7,14 @@ router.get("/", async (_: Request, res: Response) => {
   res.status(201).json(allCertifications);
 });
 
-router.get("/:id", async (req: Request, res: Response) => {
+router.get("/:id", async (req: Request, res: Response, next: NextFunction) => {
   const { id } = req.params;
-  const certification = await CertificationService.findOne(id);
-  res.status(200).json(certification);
+  try {
+    const certification = await CertificationService.findOne(id);
+    res.status(200).json(certification);
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.post("/", async (req: Request, res: Response, next: NextFunction) => {

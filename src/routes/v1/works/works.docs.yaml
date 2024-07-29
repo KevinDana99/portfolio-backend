@@ -12,7 +12,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/CertificationListSchemaType"
+                  $ref: "#/components/schemas/Certification"
         "400":
           description: Solicitud incorrecta
 
@@ -26,14 +26,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CertificationSchemaType"
+              $ref: "#/components/schemas/Certification"
       responses:
         "201":
           description: Certificación creada exitosamente
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CertificationSchemaType"
+                $ref: "#/components/schemas/Certification"
         "400":
           description: Solicitud incorrecta
 
@@ -55,7 +55,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CertificationSchemaType"
+                $ref: "#/components/schemas/Certification"
         "404":
           description: Certificación no encontrada
         "400":
@@ -78,14 +78,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CertificationSchemaType"
+              $ref: "#/components/schemas/Certification"
       responses:
         "200":
           description: Certificación modificada exitosamente
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CertificationSchemaType"
+                $ref: "#/components/schemas/Certification"
         "404":
           description: Certificación no encontrada
         "400":

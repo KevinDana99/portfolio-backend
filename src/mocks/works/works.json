@@ -1,0 +1,65 @@
+[
+  {
+    "_id": "0",
+    "title": "SSR. Frontend Developer",
+    "entity": {
+      "name": "Patagonia Chic",
+      "location": "El Calafate",
+      "categories": ["E-comerce", "tourist", "tour-packs"],
+      "url_site": "https://www.patagoniachic.com"
+    },
+    "init_at": "05/04/22",
+    "finished_at": "28/05/24",
+    "img": "https",
+    "roles": ["Frontend"],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "Javascript",
+      "Typescript",
+      "React",
+      "Redux",
+      "GraphQL",
+      "Styled-Components",
+      "react-hooks",
+      "custom-hooks",
+      "Atlassian ecosystem"
+    ],
+    "work_mode": "remote",
+    "contract_mode": "contractor"
+  },
+  {
+    "_id": "1",
+    "title": "JR. Database Administer",
+    "entity": {
+      "name": "Toyota",
+      "location": "Puerto Madryn",
+      "categories": ["cars", "sells", "mechanic"],
+      "url_site": ""
+    },
+    "init_at": "01/12/21",
+    "finished_at": "01/03/22",
+    "img": "https",
+    "roles": ["sells", "calls", "database", "turns"],
+    "technologies": ["SQL"],
+    "work_mode": "presential",
+    "contract_mode": "dependency relationship"
+  },
+  {
+    "_id": "2",
+    "title": "JR. Database Administer",
+    "entity": {
+      "name": "Accel",
+      "location": "Puerto Madryn",
+      "categories": ["security", "cams", "access control"],
+      "url_site": "https://www.accel.com"
+    },
+    "init_at": "01/02/2021",
+    "finished_at": "01/08/2021",
+    "img": "https",
+    "roles": ["database", "calls", "public attention"],
+    "technologies": ["SQL"],
+    "work_mode": "presential",
+    "contract_mode": "passant"
+  }
+]

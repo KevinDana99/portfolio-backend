@@ -1,0 +1,37 @@
+{
+  "$ref": "#/components/CertificationListSchemaType",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "CertificationListSchemaType": {
+      "items": {
+        "$ref": "#/components/CertificationSchemaType"
+      },
+      "type": "array"
+    },
+    "CertificationSchemaType": {
+      "additionalProperties": false,
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "categories": {
+          "type": "string"
+        },
+        "dateAt": {
+          "type": "string"
+        },
+        "entity": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["_id", "name", "entity", "dateAt", "img", "categories"],
+      "type": "object"
+    }
+  }
+}

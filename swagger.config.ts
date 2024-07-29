@@ -1,12 +1,13 @@
 import { SwaggerOptions } from "swagger-ui-express";
 import dotenv from "dotenv";
 import { PORT } from "./src/constants";
-import {
-  allCertificationsSchema,
-  oneCertificationSchema,
-} from "./src/schemas/docs/certifications";
-import { allUsersSchema, oneUserSchema } from "./src/schemas/docs/users";
+import * as CertificationSchema from "./src/swagger/schemas/certifications.schema.json";
+
 dotenv.config();
+
+const { CertificationSchemaType, CertificationListSchemaType } =
+  CertificationSchema.definitions;
+
 const swaggerConfig: SwaggerOptions = {
   swaggerDefinition: {
     openapi: "3.0.0",
@@ -25,10 +26,8 @@ const swaggerConfig: SwaggerOptions = {
 
     components: {
       schemas: {
-        certifications: allCertificationsSchema,
-        certification: oneCertificationSchema,
-        users: allUsersSchema,
-        user: oneUserSchema,
+        CertificationListSchemaType,
+        CertificationSchemaType,
       },
     },
   },

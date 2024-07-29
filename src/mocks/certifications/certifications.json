@@ -5,7 +5,7 @@
     "entity": "Platzi",
     "dateAt": "2023",
     "img": "https",
-    "category": "programer"
+    "categories": "programer"
   },
   {
     "_id": "1",
@@ -13,7 +13,7 @@
     "entity": "Platzi",
     "dateAt": "2023",
     "img": "https",
-    "category": "programer"
+    "categories": "programer"
   },
   {
     "_id": "2",
@@ -21,6 +21,6 @@
     "entity": "Platzi",
     "dateAt": "2023",
     "img": "https",
-    "category": "programer"
+    "categories": "programer"
   }
 ]

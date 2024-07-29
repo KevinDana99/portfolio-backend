@@ -11,6 +11,6 @@ paths:
             application/json:
               schema:
                 type: array
-                $ref: "#/components/schemas/certifications"
+                $ref: "#/components/schemas/reviews"
         "400":
           description: Solicitud incorrecta
